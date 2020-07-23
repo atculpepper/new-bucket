@@ -15,7 +15,6 @@ function App() {
   return (
     <div className={classes.root}>
       <Header color='primary' />
-      {/* <header className="App-header"> */}
       <img src={logo} className='App-logo' alt='logo' />
     </div>
   );
