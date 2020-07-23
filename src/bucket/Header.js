@@ -16,11 +16,9 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     flexGrow: 1,
+    fontFamily: 'Roboto',
   },
-  // toolbar: {
-  //   textAlign: 'center',
-  //   height: 80,
-  // },
+
   heading: {
     margin: 'auto',
   },
@@ -37,15 +35,10 @@ const Header = () => {
           color='inherit'
           aria-label='menu'
         >
-          <MenuIcon />
+          <MenuIcon color='inherit' />
         </IconButton>
-        <Typography
-          className={classes.title}
-          color='secondary'
-          variant='h4'
-          fontFamily='Nunito'
-        >
-          bucket
+        <Typography className={classes.title} color='secondary' variant='h2'>
+          Bucket
         </Typography>
         <Button color='inherit'>Login</Button>
       </Toolbar>

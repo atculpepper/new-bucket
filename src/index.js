@@ -3,19 +3,8 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import {
-  createMuiTheme,
-  makeStyles,
-  ThemeProvider,
-} from '@material-ui/core/styles';
-import Nunito from './Nunito-Black.ttf';
-
-const nunito = {
-  fontFamily: 'Nunito',
-  fontStyle: 'normal',
-  fontDisplay: 'swap',
-  fontWeight: 400,
-};
+import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+import 'fontsource-roboto';
 
 const theme = createMuiTheme({
   palette: {
@@ -32,26 +21,7 @@ const theme = createMuiTheme({
       contrastText: '#000',
     },
     typography: {
-      fontFamily: [
-        'Nunito',
-        // 'Helvetica Neue',
-        // "'Montserrat', sans-serif",
-        // 'BlinkMacSystemFont',
-        // '"Segoe UI"',
-        // 'Roboto',
-        // 'Arial',
-        // 'sans-serif',
-        // '"Apple Color Emoji"',
-        // '"Segoe UI Emoji"',
-        // '"Segoe UI Symbol"',
-      ].join(','),
-    },
-    overrides: {
-      MuiCssBaseline: {
-        '@global': {
-          '@font-face': [nunito],
-        },
-      },
+      fontFamily: 'Roboto',
     },
   },
 });
