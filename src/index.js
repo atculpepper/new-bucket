@@ -7,11 +7,28 @@ import {
   createMuiTheme,
   makeStyles,
   ThemeProvider,
-} from '@material-ui-core/styles';
+} from '@material-ui/core/styles';
+
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      light: '#62efff',
+      main: '#00bcd4',
+      dark: '#008ba3',
+      contrastText: '#000',
+    },
+    secondary: {
+      light: '#ffff72',
+      main: '#ffeb3b',
+      dark: '#c8b900',
+      contrastText: '#000',
+    },
+  },
+});
 
 ReactDOM.render(
   <React.StrictMode>
-    <ThemeProvider>
+    <ThemeProvider theme={theme}>
       <App />
     </ThemeProvider>
   </React.StrictMode>,
