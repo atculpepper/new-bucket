@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from './logo.svg';
+import logo from './bucket.ico';
 import './App.css';
 import Header from './bucket/Header';
 
