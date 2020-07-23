@@ -19,7 +19,13 @@ const Header = () => {
   return (
     <AppBar position='static'>
       <Toolbar className={classes.Toolbar}>
-        <Typography className={classes.heading} variant='h5' align='center'>
+        <Typography
+          className={classes.heading}
+          color='secondary'
+          variant='h3'
+          align='center'
+          fontFamily='Arial'
+        >
           Bucket
         </Typography>
       </Toolbar>

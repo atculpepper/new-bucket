@@ -8,6 +8,14 @@ import {
   makeStyles,
   ThemeProvider,
 } from '@material-ui/core/styles';
+import Nunito from './Nunito-Black.ttf';
+
+const nunito = {
+  fontFamily: 'Nunito',
+  fontStyle: 'normal',
+  fontDisplay: 'swap',
+  fontWeight: 400,
+};
 
 const theme = createMuiTheme({
   palette: {
@@ -22,6 +30,28 @@ const theme = createMuiTheme({
       main: '#ffeb3b',
       dark: '#c8b900',
       contrastText: '#000',
+    },
+    typography: {
+      fontFamily: [
+        'Nunito',
+        // 'Helvetica Neue',
+        // "'Montserrat', sans-serif",
+        // 'BlinkMacSystemFont',
+        // '"Segoe UI"',
+        // 'Roboto',
+        // 'Arial',
+        // 'sans-serif',
+        // '"Apple Color Emoji"',
+        // '"Segoe UI Emoji"',
+        // '"Segoe UI Symbol"',
+      ].join(','),
+    },
+    overrides: {
+      MuiCssBaseline: {
+        '@global': {
+          '@font-face': [nunito],
+        },
+      },
     },
   },
 });
