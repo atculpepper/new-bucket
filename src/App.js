@@ -24,15 +24,15 @@ import LandingPage from './pages/LandingPage/LandingPage';
 const theme = createMuiTheme({
   palette: {
     primary: {
-      light: '#62efff',
-      main: '#00bcd4',
-      dark: '#008ba3',
+      light: '#5da8dd',
+      main: '#1d79ab',
+      dark: '#004d7c',
       contrastText: '#000',
     },
     secondary: {
-      light: '#ffff72',
-      main: '#ffeb3b',
-      dark: '#c8b900',
+      light: '#ffff75',
+      main: '#ead342',
+      dark: '#b4a200',
       contrastText: '#000',
     },
     // typography: {
