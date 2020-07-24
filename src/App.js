@@ -38,6 +38,9 @@ const theme = createMuiTheme({
     // typography: {
     //   fontFamily: 'Roboto',
     // },
+    background: {
+      paper: '#e0e0e0',
+    },
   },
 });
 

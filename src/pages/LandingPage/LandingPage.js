@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
+import { Paper, Typography } from '@material-ui/core';
+import Button from '@material-ui/core/Button';
 
 // import './LandingPage.css';
 
@@ -15,11 +17,11 @@ class LandingPage extends Component {
 
   render() {
     return (
-      <div className='container'>
+      <Paper color='inherit'>
         <h2>{this.state.heading}</h2>
 
-        <div className='grid'>
-          <div className='grid-col grid-col_8'>
+        <div>
+          <div>
             <p>
               Welcome to Bucket! Bucket is an application that will help you to
               develop, store, and explore the Bucket List of experiences that
@@ -29,14 +31,18 @@ class LandingPage extends Component {
               account with us.
             </p>
           </div>
-          <div className='grid-col grid-col_4'>
+          <div>
             <h3>Already a Member?</h3>
-            <button className='btn btn_sizeFull' onClick={this.onLogin}>
+            <Button
+              variant='contained'
+              color='secondary'
+              onClick={this.onLogin}
+            >
               Login
-            </button>
+            </Button>
           </div>
         </div>
-      </div>
+      </Paper>
     );
   }
 }
