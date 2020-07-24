@@ -7,9 +7,7 @@ import {
 } from 'react-router-dom';
 
 import { connect } from 'react-redux';
-import logo from './bucket.ico';
 import './App.css';
-import { makeStyles } from '@material-ui/core/styles';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import 'fontsource-roboto';
 
@@ -19,14 +17,10 @@ import ProtectedRoute from './bucket/ProtectedRoute/ProtectedRoute';
 import Login from './bucket/Login/Login';
 import Register from './bucket/Register/Register';
 import AboutPage from './pages/AboutPage/AboutPage';
+import UserPage from './pages/UserPage/UserPage';
+import LandingPage from './pages/LandingPage/LandingPage';
 
-// const useStyles = makeStyles({
-//   root: {
-//     height: '100vh',
-//     // backgroundImage: { logo },
-//   },
-// });
-
+//custom theme to wrap App in
 const theme = createMuiTheme({
   palette: {
     primary: {
@@ -41,9 +35,9 @@ const theme = createMuiTheme({
       dark: '#c8b900',
       contrastText: '#000',
     },
-    typography: {
-      fontFamily: 'Roboto',
-    },
+    // typography: {
+    //   fontFamily: 'Roboto',
+    // },
   },
 });
 
@@ -64,13 +58,13 @@ class App extends Component {
               <Redirect exact from='/' to='/home' />
               {/* Visiting localhost:3000/about will show the about page.
             This is a route anyone can see, no login necessary */}
-              {/* <Route exact path='/about' component={AboutPage} /> */}
-              <Route exact path='/home' component={AboutPage} />
+              <Route exact path='/about' component={AboutPage} />
+              <Route exact path='/home' component={LandingPage} />
               {/* For protected routes, the view could show one of several things on the same route.
             Visiting localhost:3000/user will show the UserPage if the user is logged in.
             If the user is not logged in, the ProtectedRoute will show the 'Login' or 'Register' page.
             Even though it seems like they are different pages, the user is always on localhost:3000/user */}
-              {/* <ProtectedRoute exact path='/admin' component={UserPage} /> */}
+              <ProtectedRoute exact path='/admin' component={UserPage} />
               {/* This works the same as the other protected route, except that if the user is logged in,
             they will see the info page instead. */}
               {/* <ProtectedRoute exact path='/info' component={InfoPage} /> */}

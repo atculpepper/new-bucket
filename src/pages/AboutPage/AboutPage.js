@@ -8,7 +8,7 @@ import React from 'react';
 const AboutPage = () => (
   <div>
     <div>
-      <p>This about page is for anyone to read!</p>
+      <p>About page HERE</p>
     </div>
   </div>
 );
