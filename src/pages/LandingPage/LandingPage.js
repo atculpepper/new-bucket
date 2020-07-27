@@ -69,7 +69,7 @@ class LandingPage extends Component {
           className={classes.hero}
           style={{ position: 'fixed', top: '50px', left: 0, margin: 0 }}
         >
-          <Box>
+          <Box fontWeight='fontWeightRegular' fontStyle='italic'>
             <Typography variant='h3'>Build your Adventure</Typography>
           </Box>
         </Box>
