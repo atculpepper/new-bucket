@@ -4,6 +4,8 @@ import mapStoreToProps from '../../redux/mapStoreToProps';
 import { Paper, Typography, Container } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
 import { withStyles, createStyles, fade } from '@material-ui/core/styles';
+import logo from '../../bucket.ico';
+import Box from '@material-ui/core/Box';
 
 // import './LandingPage.css';
 
@@ -18,6 +20,9 @@ const customStyles = (theme) =>
       //   margin: '10px',
       paddingTop: '15px',
     },
+    imageContainer: {
+      backgroundImage: `url(${logo})`,
+    },
     paragraph: {
       margin: '10px',
       marginTop: '15px',
@@ -27,6 +32,9 @@ const customStyles = (theme) =>
       //   padding: '5px',
       margin: '10px',
       marginBottom: '15px',
+    },
+    hero: {
+      backgroundImage: `linear-gradient(rgba(0,0,0, 0.5), rgba(0,0,0, 0.5)), url('https://images.unsplash.com/photo-1473625247510-8ceb1760943f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2499&q=80')`,
     },
   });
 
@@ -44,7 +52,11 @@ class LandingPage extends Component {
 
     return (
       <div className={classes.paper}>
-        <Paper color='inherit'>
+        <Box className={classes.hero}>
+          <Box>Bucket</Box>
+        </Box>
+        {/* <Paper color='inherit'>
+          <Container className={classes.imageContainer} />
           <Container>
             {/* <Typography
               className={classes.heading}
@@ -53,7 +65,7 @@ class LandingPage extends Component {
             >
               {this.state.heading}
             </Typography> */}
-            <Container className={classes.heading}>
+        {/* <Container className={classes.heading}>
               <Typography variant='h7'>
                 Welcome to Bucket! Bucket is an application that will help you
                 to develop, store, and explore the Bucket List of experiences
@@ -62,8 +74,8 @@ class LandingPage extends Component {
                 Bucket List. If you are not yet a Bucket user, click Register to
                 create an account with us.
               </Typography>
-            </Container>
-            {/* <Typography className={classes.heading} variant='h7'>
+            </Container> */}
+        {/* <Typography className={classes.heading} variant='h7'>
             Welcome to Bucket! Bucket is an application that will help you to
             develop, store, and explore the Bucket List of experiences that you
             want to have within your lifetime. If you are already a user, login
@@ -71,7 +83,7 @@ class LandingPage extends Component {
             are not yet a Bucket user, click Register to create an account with
             us.
           </Typography> */}
-            <Container>
+        {/* <Container>
               <Typography className={classes.heading} variant='h6'>
                 Already a Member?
               </Typography>
@@ -86,7 +98,7 @@ class LandingPage extends Component {
               Login
             </Button>
           </Container>
-        </Paper>
+        </Paper> */}
       </div>
     );
   }
