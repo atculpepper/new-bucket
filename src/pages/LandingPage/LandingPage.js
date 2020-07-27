@@ -6,35 +6,48 @@ import Button from '@material-ui/core/Button';
 import { withStyles, createStyles, fade } from '@material-ui/core/styles';
 import logo from '../../bucket.ico';
 import Box from '@material-ui/core/Box';
+import heroImage from '../../irish-road.jpg';
 
 // import './LandingPage.css';
 
 const customStyles = (theme) =>
   createStyles({
-    paper: {
-      marginTop: '80px',
-      padding: '15px',
-      paddingTop: '20px',
-    },
-    heading: {
-      //   margin: '10px',
-      paddingTop: '15px',
-    },
-    imageContainer: {
-      backgroundImage: `url(${logo})`,
-    },
-    paragraph: {
-      margin: '10px',
-      marginTop: '15px',
-      paddingTop: '15px',
-    },
-    button: {
-      //   padding: '5px',
-      margin: '10px',
-      marginBottom: '15px',
-    },
+    // paper: {
+    //   marginTop: '80px',
+    //   padding: '15px',
+    //   paddingTop: '20px',
+    // },
+    // heading: {
+    //   //   margin: '10px',
+    //   paddingTop: '15px',
+    // },
+    // imageContainer: {
+    //   backgroundImage: `url(${logo})`,
+    // },
+    // paragraph: {
+    //   margin: '10px',
+    //   marginTop: '15px',
+    //   paddingTop: '15px',
+    // },
+    // button: {
+    //   //   padding: '5px',
+    //   margin: '10px',
+    //   marginBottom: '15px',
+    // },
     hero: {
-      backgroundImage: `linear-gradient(rgba(0,0,0, 0.5), rgba(0,0,0, 0.5)), url('https://images.unsplash.com/photo-1473625247510-8ceb1760943f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2499&q=80')`,
+      backgroundImage: `url(${heroImage})`,
+      width: '100vw',
+      height: '40vh',
+      backgroundPosition: 'center',
+      backgroundSize: 'cover',
+      backgroundRepeat: 'no-repeat',
+      position: 'relative',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      color: '#fff',
+      fontSize: '4rem',
+      fontFamily: 'Roboto',
     },
   });
 
@@ -51,9 +64,14 @@ class LandingPage extends Component {
     const { classes } = this.props;
 
     return (
-      <div className={classes.paper}>
-        <Box className={classes.hero}>
-          <Box>Bucket</Box>
+      <div>
+        <Box
+          className={classes.hero}
+          style={{ position: 'fixed', top: '50px', left: 0, margin: 0 }}
+        >
+          <Box>
+            <Typography variant='h3'>Build your Adventure</Typography>
+          </Box>
         </Box>
         {/* <Paper color='inherit'>
           <Container className={classes.imageContainer} />
