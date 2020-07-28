@@ -7,6 +7,7 @@ import { withStyles, createStyles, fade } from '@material-ui/core/styles';
 import logo from '../../bucket.ico';
 import Box from '@material-ui/core/Box';
 import heroImage from '../../irish-road.jpg';
+import Card from '../../bucket/Card/Card';
 
 // import './LandingPage.css';
 
@@ -39,6 +40,13 @@ const customStyles = (theme) =>
       fontWeight: 800,
       paddingBottom: theme.spacing(3),
     },
+    card: {
+      marginTop: '50vh',
+      position: 'relative',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
   });
 
 class LandingPage extends Component {
@@ -64,11 +72,15 @@ class LandingPage extends Component {
           </Box>
         </Box>
         <Grid container spacing={3}>
-          <Grid item xs={12} sm={6} md={4}></Grid>
-
-          <Grid item xs={12} sm={6} md={4}></Grid>
-
-          <Grid item xs={12} sm={6} md={4}></Grid>
+          <Grid item xs={12} sm={6} md={4} className={classes.card}>
+            <Card></Card>
+          </Grid>
+          <Grid item xs={12} sm={6} md={4} className={classes.card}>
+            <Card className={classes.card}></Card>
+          </Grid>
+          <Grid item xs={12} sm={6} md={4} className={classes.card}>
+            <Card className={classes.card}></Card>
+          </Grid>
         </Grid>
         {/* <Container maxWidth='lg' className={classes.container}>
           <Typography
