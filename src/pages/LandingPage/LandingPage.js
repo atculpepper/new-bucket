@@ -33,11 +33,11 @@ const customStyles = (theme) =>
       // },
     },
     container: {
-      paddingTop: theme.spacing(10),
+      paddingTop: theme.spacing(3),
     },
     aboutTitle: {
       fontWeight: 800,
-      paddingBottom: theme.spacing(10),
+      paddingBottom: theme.spacing(3),
     },
   });
 
@@ -63,8 +63,14 @@ class LandingPage extends Component {
             <Typography variant='h3'>Plan your Adventures</Typography>
           </Box>
         </Box>
+        <Grid container spacing={3}>
+          <Grid item xs={12} sm={6} md={4}></Grid>
 
-        <Container maxWidth='xs' className={classes.container}>
+          <Grid item xs={12} sm={6} md={4}></Grid>
+
+          <Grid item xs={12} sm={6} md={4}></Grid>
+        </Grid>
+        {/* <Container maxWidth='lg' className={classes.container}>
           <Typography
             variant='h4'
             className={classes.aboutTitle}
@@ -72,7 +78,7 @@ class LandingPage extends Component {
           >
             About
           </Typography>
-        </Container>
+        </Container> */}
         {/* <Paper color='inherit'>
           <Container className={classes.imageContainer} />
           <Container>
