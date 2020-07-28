@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
-import { Paper, Typography, Container } from '@material-ui/core';
+import { Grid, Typography, Container } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
 import { withStyles, createStyles, fade } from '@material-ui/core/styles';
 import logo from '../../bucket.ico';
@@ -12,32 +12,11 @@ import heroImage from '../../irish-road.jpg';
 
 const customStyles = (theme) =>
   createStyles({
-    // paper: {
-    //   marginTop: '80px',
-    //   padding: '15px',
-    //   paddingTop: '20px',
-    // },
-    // heading: {
-    //   //   margin: '10px',
-    //   paddingTop: '15px',
-    // },
-    // imageContainer: {
-    //   backgroundImage: `url(${logo})`,
-    // },
-    // paragraph: {
-    //   margin: '10px',
-    //   marginTop: '15px',
-    //   paddingTop: '15px',
-    // },
-    // button: {
-    //   //   padding: '5px',
-    //   margin: '10px',
-    //   marginBottom: '15px',
-    // },
     hero: {
       backgroundImage: `url(${heroImage})`,
       width: '100vw',
       height: '40vh',
+      // height: '500px',
       backgroundPosition: 'center',
       backgroundSize: 'cover',
       backgroundRepeat: 'no-repeat',
@@ -48,6 +27,17 @@ const customStyles = (theme) =>
       color: '#fff',
       fontSize: '4rem',
       fontFamily: 'Roboto',
+      // [theme.breakpoints.down('sm')]: {
+      //   height: 300,
+      //   fontSize: '3em',
+      // },
+    },
+    container: {
+      paddingTop: theme.spacing(10),
+    },
+    aboutTitle: {
+      fontWeight: 800,
+      paddingBottom: theme.spacing(10),
     },
   });
 
@@ -69,10 +59,20 @@ class LandingPage extends Component {
           className={classes.hero}
           style={{ position: 'fixed', top: '50px', left: 0, margin: 0 }}
         >
-          <Box fontWeight='fontWeightRegular' fontStyle='italic'>
-            <Typography variant='h3'>Build your Adventure</Typography>
+          <Box fontWeight='fontWeightRegular'>
+            <Typography variant='h3'>Plan your Adventures</Typography>
           </Box>
         </Box>
+
+        <Container maxWidth='xs' className={classes.container}>
+          <Typography
+            variant='h4'
+            className={classes.aboutTitle}
+            color='primary'
+          >
+            About
+          </Typography>
+        </Container>
         {/* <Paper color='inherit'>
           <Container className={classes.imageContainer} />
           <Container>

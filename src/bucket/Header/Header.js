@@ -41,7 +41,7 @@ const Header = () => {
         >
           <MenuIcon color='inherit' />
         </IconButton>
-        <Typography className={classes.title} color='secondary' variant='h2'>
+        <Typography className={classes.title} color='secondary' variant='h5'>
           Bucket
         </Typography>
         <Button color='inherit'>Login</Button>
