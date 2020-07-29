@@ -10,12 +10,16 @@ import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles({
   root: {
-    maxWidth: 345,
+    maxWidth: 350,
   },
   media: {
-    height: '350px',
+    //   height: '350px',
     backgroundSizing: 'cover',
-    margin: '10px',
+    // margin: '10px',
+    // marginLeft: '10px',
+    // marginRight: '10px',
+    // marginBottom: '10px',
+    // marginTop: '10px',
   },
 });
 
@@ -29,6 +33,7 @@ export default function MediaCard(props) {
           className={classes.media}
           image={props.image}
           title='Contemplative Reptile'
+          component='img'
         />
         <CardContent>
           <Typography gutterBottom variant='h5' component='h2'>
