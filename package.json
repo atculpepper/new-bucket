@@ -14,8 +14,10 @@
     "bcrypt": "^5.0.0",
     "body-parser": "^1.19.0",
     "cookie-session": "^1.4.0",
+    "css-loader": "^3.6.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "fontsource-roboto": "^2.2.6",
     "nodemon": "^2.0.4",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
@@ -35,7 +37,7 @@
     "start": "node server/server.js",
     "client": "react-scripts start",
     "server": "nodemon --watch server server/server.js",
-    "build": "react-scripts build",
+    "build": "react-scripts-build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -48,14 +50,13 @@
     "not ie <= 11",
     "not op_mini all"
   ],
-    "devDependencies": {
-      "nodemon": "^1.18.10"
-    },
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ],
-    "heroku-run-build-script": true
-  }
-
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  },
+  "development": [
+    "last 1 chrome version",
+    "last 1 firefox version",
+    "last 1 safari version"
+  ],
+  "heroku-run-build-script": true
+}
