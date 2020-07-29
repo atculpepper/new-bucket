@@ -73,13 +73,13 @@ class LandingPage extends Component {
         </Box>
         <Grid container spacing={3}>
           <Grid item xs={12} sm={6} md={4} className={classes.card}>
+            <Card title={'About'}></Card>
+          </Grid>
+          <Grid item xs={12} sm={6} md={4} className={classes.card}>
             <Card></Card>
           </Grid>
           <Grid item xs={12} sm={6} md={4} className={classes.card}>
-            <Card className={classes.card}></Card>
-          </Grid>
-          <Grid item xs={12} sm={6} md={4} className={classes.card}>
-            <Card className={classes.card}></Card>
+            <Card></Card>
           </Grid>
         </Grid>
         {/* <Container maxWidth='lg' className={classes.container}>
