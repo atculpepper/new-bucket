@@ -9,6 +9,10 @@ import Box from '@material-ui/core/Box';
 import heroImage from '../../irish-road.jpg';
 import Card from '../../bucket/Card/Card';
 
+import LoginImage from '../../login.png';
+import RegisterImage from '../../register.png';
+import BucketImage from '../../bucket (1).png';
+
 // import './LandingPage.css';
 
 const customStyles = (theme) =>
@@ -41,7 +45,7 @@ const customStyles = (theme) =>
       paddingBottom: theme.spacing(3),
     },
     card: {
-      marginTop: '50vh',
+      marginTop: '52vh',
       position: 'relative',
       display: 'flex',
       justifyContent: 'center',
@@ -73,13 +77,34 @@ class LandingPage extends Component {
         </Box>
         <Grid container spacing={3}>
           <Grid item xs={12} sm={6} md={4} className={classes.card}>
-            <Card title={'About'}></Card>
+            <Card
+              title={'About'}
+              image={BucketImage}
+              text={
+                'Bucket is an application that will help you build out and develop the list of experiences that you want to have in your lifetime.'
+              }
+              button={'Learn more'}
+            ></Card>
           </Grid>
           <Grid item xs={12} sm={6} md={4} className={classes.card}>
-            <Card></Card>
+            <Card
+              title={'Login'}
+              image={LoginImage}
+              text={
+                'Bucket is an application that will help you build out and develop the list of experiences that you want to have in your lifetime.'
+              }
+              button={'Log in Here'}
+            ></Card>
           </Grid>
           <Grid item xs={12} sm={6} md={4} className={classes.card}>
-            <Card></Card>
+            <Card
+              title={'Register'}
+              image={RegisterImage}
+              text={
+                'Bucket is an application that will help you build out and develop the list of experiences that you want to have in your lifetime.'
+              }
+              button={'Register Here'}
+            ></Card>
           </Grid>
         </Grid>
         {/* <Container maxWidth='lg' className={classes.container}>
