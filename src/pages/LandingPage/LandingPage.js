@@ -25,7 +25,7 @@ const customStyles = (theme) =>
       backgroundPosition: 'center',
       backgroundSize: 'cover',
       backgroundRepeat: 'no-repeat',
-      position: 'relative',
+      position: 'absolute',
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
@@ -38,7 +38,8 @@ const customStyles = (theme) =>
       // },
     },
     container: {
-      paddingTop: theme.spacing(3),
+      position: 'fixed',
+      marginBottom: '10px',
     },
     aboutTitle: {
       fontWeight: 800,
@@ -67,14 +68,16 @@ class LandingPage extends Component {
 
     return (
       <div>
-        <Box
-          className={classes.hero}
-          style={{ position: 'fixed', top: '50px', left: 0, margin: 0 }}
-        >
-          <Box fontWeight='fontWeightRegular'>
-            <Typography variant='h3'>Plan your Adventures</Typography>
+        <Container className={classes.container}>
+          <Box
+            className={classes.hero}
+            style={{ position: 'fixed', top: '50px', left: 0, margin: 0 }}
+          >
+            <Box fontWeight='fontWeightRegular'>
+              <Typography variant='h3'>Plan your Adventures</Typography>
+            </Box>
           </Box>
-        </Box>
+        </Container>
         <Grid container spacing={3}>
           <Grid item xs={12} sm={6} md={4} className={classes.card}>
             <Card
@@ -84,6 +87,7 @@ class LandingPage extends Component {
                 'Bucket is an application that will help you build out and develop the list of experiences that you want to have in your lifetime.'
               }
               button={'Learn more'}
+              className={classes.card}
             ></Card>
           </Grid>
           <Grid item xs={12} sm={6} md={4} className={classes.card}>
@@ -94,6 +98,7 @@ class LandingPage extends Component {
                 'Bucket is an application that will help you build out and develop the list of experiences that you want to have in your lifetime.'
               }
               button={'Log in Here'}
+              className={classes.card}
             ></Card>
           </Grid>
           <Grid item xs={12} sm={6} md={4} className={classes.card}>
@@ -104,6 +109,7 @@ class LandingPage extends Component {
                 'Bucket is an application that will help you build out and develop the list of experiences that you want to have in your lifetime.'
               }
               button={'Register Here'}
+              className={classes.card}
             ></Card>
           </Grid>
         </Grid>
