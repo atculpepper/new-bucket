@@ -6,7 +6,7 @@ import Button from '@material-ui/core/Button';
 import { withStyles, createStyles, fade } from '@material-ui/core/styles';
 import logo from '../../bucket.ico';
 import Box from '@material-ui/core/Box';
-import heroImage from '../../irish-road.jpg';
+import heroImage from '../../travel-hero.jpg';
 import Card from '../../bucket/Card/Card';
 
 import LoginImage from '../../login.png';
