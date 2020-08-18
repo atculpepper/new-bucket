@@ -15,17 +15,22 @@ import BucketImage from '../../bucket (1).png';
 
 // import './LandingPage.css';
 
+// background: linear-gradient(
+//   rgba(20,20,20, .5),
+//   rgba(20,20,20, .5));
+// }
+
 const customStyles = (theme) =>
   createStyles({
     hero: {
-      backgroundImage: `url(${heroImage})`,
+      backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${heroImage})`,
       width: '100vw',
       height: '40vh',
       // height: '500px',
       backgroundPosition: 'center',
       backgroundSize: 'cover',
       backgroundRepeat: 'no-repeat',
-      position: 'absolute',
+      position: 'relative',
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
@@ -42,8 +47,9 @@ const customStyles = (theme) =>
       marginBottom: '10px',
     },
     aboutTitle: {
-      fontWeight: 800,
-      paddingBottom: theme.spacing(3),
+      backgroundColor: `linear-gradient(rgba(20,20,20, .5), rgba(20,20,20, .5))`,
+      // fontWeight: 800,
+      // paddingBottom: theme.spacing(3),
     },
     card: {
       marginTop: '52vh',
@@ -68,16 +74,15 @@ class LandingPage extends Component {
 
     return (
       <div>
-        <Container className={classes.container}>
-          <Box
-            className={classes.hero}
-            style={{ position: 'fixed', top: '50px', left: 0, margin: 0 }}
-          >
-            <Box fontWeight='fontWeightRegular'>
-              <Typography variant='h3'>Plan your Adventures</Typography>
-            </Box>
+        <Box
+          className={classes.hero}
+          // style={{ position: 'fixed', top: '50px', left: 0, margin: 0 }}
+        >
+          <Box fontWeight='fontWeightRegular' className={classes.aboutTitle}>
+            <Typography variant='h3'>Plan your Adventures</Typography>
           </Box>
-        </Container>
+        </Box>
+        <Container className={classes.container}></Container>
         <Grid container spacing={3}>
           <Grid item xs={12} sm={6} md={4} className={classes.card}>
             <Card
