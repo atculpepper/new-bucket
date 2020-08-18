@@ -54,7 +54,7 @@ const customStyles = (theme) =>
       // paddingBottom: theme.spacing(3),
     },
     card: {
-      marginTop: '52vh',
+      marginTop: '5vh',
       position: 'relative',
       display: 'flex',
       justifyContent: 'center',
