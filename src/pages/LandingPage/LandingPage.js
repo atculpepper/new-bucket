@@ -6,7 +6,7 @@ import Button from '@material-ui/core/Button';
 import { withStyles, createStyles, fade } from '@material-ui/core/styles';
 import logo from '../../bucket.ico';
 import Box from '@material-ui/core/Box';
-import heroImage from '../../irish-road.jpg';
+import heroImage from '../../travel-hero.jpg';
 import Card from '../../bucket/Card/Card';
 
 import LoginImage from '../../login.png';
@@ -15,37 +15,46 @@ import BucketImage from '../../bucket (1).png';
 
 // import './LandingPage.css';
 
+// background: linear-gradient(
+//   rgba(20,20,20, .5),
+//   rgba(20,20,20, .5));
+// }
+
 const customStyles = (theme) =>
   createStyles({
     hero: {
-      backgroundImage: `url(${heroImage})`,
-      width: '100vw',
+      backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${heroImage})`,
       height: '40vh',
-      // height: '500px',
+      width: '100vw',
       backgroundPosition: 'center',
-      backgroundSize: 'cover',
       backgroundRepeat: 'no-repeat',
+      backgroundSize: 'cover',
       position: 'relative',
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
       color: '#fff',
       fontSize: '4rem',
-      fontFamily: 'Roboto',
+      [theme.breakpoints.down('sm')]: {
+        height: 300,
+        fontSize: '2rem',
+      },
       // [theme.breakpoints.down('sm')]: {
       //   height: 300,
       //   fontSize: '3em',
       // },
     },
     container: {
-      paddingTop: theme.spacing(3),
+      position: 'fixed',
+      marginBottom: '10px',
     },
     aboutTitle: {
-      fontWeight: 800,
-      paddingBottom: theme.spacing(3),
+      backgroundColor: `linear-gradient(rgba(20,20,20, .5), rgba(20,20,20, .5))`,
+      // fontWeight: 800,
+      // paddingBottom: theme.spacing(3),
     },
     card: {
-      marginTop: '52vh',
+      marginTop: '5vh',
       position: 'relative',
       display: 'flex',
       justifyContent: 'center',
@@ -69,12 +78,13 @@ class LandingPage extends Component {
       <div>
         <Box
           className={classes.hero}
-          style={{ position: 'fixed', top: '50px', left: 0, margin: 0 }}
+          // style={{ position: 'fixed', top: '50px', left: 0, margin: 0 }}
         >
-          <Box fontWeight='fontWeightRegular'>
+          <Box fontWeight='fontWeightRegular' className={classes.aboutTitle}>
             <Typography variant='h3'>Plan your Adventures</Typography>
           </Box>
         </Box>
+        <Container className={classes.container}></Container>
         <Grid container spacing={3}>
           <Grid item xs={12} sm={6} md={4} className={classes.card}>
             <Card
@@ -84,6 +94,7 @@ class LandingPage extends Component {
                 'Bucket is an application that will help you build out and develop the list of experiences that you want to have in your lifetime.'
               }
               button={'Learn more'}
+              className={classes.card}
             ></Card>
           </Grid>
           <Grid item xs={12} sm={6} md={4} className={classes.card}>
@@ -94,6 +105,7 @@ class LandingPage extends Component {
                 'Bucket is an application that will help you build out and develop the list of experiences that you want to have in your lifetime.'
               }
               button={'Log in Here'}
+              className={classes.card}
             ></Card>
           </Grid>
           <Grid item xs={12} sm={6} md={4} className={classes.card}>
@@ -104,6 +116,7 @@ class LandingPage extends Component {
                 'Bucket is an application that will help you build out and develop the list of experiences that you want to have in your lifetime.'
               }
               button={'Register Here'}
+              className={classes.card}
             ></Card>
           </Grid>
         </Grid>
