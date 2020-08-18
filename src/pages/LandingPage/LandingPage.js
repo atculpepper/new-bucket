@@ -24,19 +24,21 @@ const customStyles = (theme) =>
   createStyles({
     hero: {
       backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${heroImage})`,
-      width: '100vw',
       height: '40vh',
-      // height: '500px',
+      width: '100vw',
       backgroundPosition: 'center',
-      backgroundSize: 'cover',
       backgroundRepeat: 'no-repeat',
+      backgroundSize: 'cover',
       position: 'relative',
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
       color: '#fff',
       fontSize: '4rem',
-      fontFamily: 'Roboto',
+      [theme.breakpoints.down('sm')]: {
+        height: 300,
+        fontSize: '2rem',
+      },
       // [theme.breakpoints.down('sm')]: {
       //   height: 300,
       //   fontSize: '3em',
