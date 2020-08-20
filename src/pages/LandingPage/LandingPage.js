@@ -90,9 +90,7 @@ class LandingPage extends Component {
             <Card
               title={'About'}
               image={BucketImage}
-              text={
-                'Bucket is an application that will help you build out and develop the list of experiences that you want to have in your lifetime.'
-              }
+              text={'Learn more about Bucket'}
               button={'Learn more'}
               className={classes.card}
             ></Card>
@@ -101,9 +99,7 @@ class LandingPage extends Component {
             <Card
               title={'Login'}
               image={LoginImage}
-              text={
-                'Bucket is an application that will help you build out and develop the list of experiences that you want to have in your lifetime.'
-              }
+              text={'If you have an account, log in here!'}
               button={'Log in Here'}
               className={classes.card}
             ></Card>
@@ -112,9 +108,7 @@ class LandingPage extends Component {
             <Card
               title={'Register'}
               image={RegisterImage}
-              text={
-                'Bucket is an application that will help you build out and develop the list of experiences that you want to have in your lifetime.'
-              }
+              text={'Register here to start building your Bucket List.'}
               button={'Register Here'}
               className={classes.card}
             ></Card>
