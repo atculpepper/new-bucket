@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { HashRouter as Router } from 'react-router-dom';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 
@@ -9,6 +9,7 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+import Login from '../Login/Login';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
@@ -52,9 +53,13 @@ const Header = () => {
         <Typography className={classes.title} color='secondary' variant='h5'>
           Bucket
         </Typography>
-        <Link to='/login'>
-          <Button color='inherit'>Login</Button>
-        </Link>
+        {/* <Link component='button' to='/login'> */}
+        <Router>
+          <Button href='#login' color='inherit'>
+            Login
+          </Button>
+        </Router>
+        {/* </Link> */}
       </Toolbar>
     </AppBar>
   );
