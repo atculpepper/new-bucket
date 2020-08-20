@@ -1,4 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import mapStoreToProps from '../../redux/mapStoreToProps';
+
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
@@ -27,6 +31,10 @@ const useStyles = makeStyles((theme) => ({
 const Header = () => {
   const classes = useStyles();
 
+  // onLogin = (event) => {
+  //   this.props.history.push('/login');
+  // };
+
   return (
     <AppBar
       position='static'
@@ -44,10 +52,12 @@ const Header = () => {
         <Typography className={classes.title} color='secondary' variant='h5'>
           Bucket
         </Typography>
-        <Button color='inherit'>Login</Button>
+        <Link to='/login'>
+          <Button color='inherit'>Login</Button>
+        </Link>
       </Toolbar>
     </AppBar>
   );
 };
 
-export default Header;
+export default connect(mapStoreToProps)(Header);

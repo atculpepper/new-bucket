@@ -102,6 +102,7 @@ class LandingPage extends Component {
               text={'If you have an account, log in here!'}
               button={'Log in Here'}
               className={classes.card}
+              // onClick={this.props.history.push('/login')}
             ></Card>
           </Grid>
           <Grid item xs={12} sm={6} md={4} className={classes.card}>
