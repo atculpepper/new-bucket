@@ -34,7 +34,6 @@ export default function MediaCard(props) {
         <CardMedia
           className={classes.media}
           image={props.image}
-          title='Contemplative Reptile'
           component='img'
         />
         <CardContent>
