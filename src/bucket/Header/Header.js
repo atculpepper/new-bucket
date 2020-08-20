@@ -1,5 +1,4 @@
 import React from 'react';
-import { HashRouter as Router } from 'react-router-dom';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 
@@ -54,12 +53,9 @@ const Header = () => {
           Bucket
         </Typography>
         {/* <Link component='button' to='/login'> */}
-        <Router>
-          <Button href='#login' color='inherit'>
-            Login
-          </Button>
-        </Router>
-        {/* </Link> */}
+        <Button href='#login' color='inherit'>
+          Login
+        </Button>
       </Toolbar>
     </AppBar>
   );
