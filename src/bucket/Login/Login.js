@@ -38,7 +38,9 @@ class Login extends Component {
   render() {
     return (
       <Container style={{ marginTop: '10vh', marginLeft: '3vw' }}>
-        <Typography variant='h4'>Login</Typography>
+        <Typography variant='h4' style={{ marginBottom: '2vh' }}>
+          Login
+        </Typography>
         <Grid
           container
           spacing={2}
