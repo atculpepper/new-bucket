@@ -21,7 +21,9 @@ const UserPage = (props) => (
     <Container style={{ marginTop: '15vh' }}>
       <h1 id='welcome'>Welcome, {props.store.user.username}!</h1>
       <p>Your ID is: {props.store.user.id}</p>
-      <Button color='inherit' />
+      <Button color='inherit' variant='outlined'>
+        Logout
+      </Button>
     </Container>
   </div>
 );
