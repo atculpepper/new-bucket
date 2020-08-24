@@ -30,7 +30,7 @@ export default function MediaCard(props) {
 
   return (
     <Card className={classes.root}>
-      <CardActionArea>
+      <CardActionArea href={props.href}>
         <CardMedia
           className={classes.media}
           image={props.image}

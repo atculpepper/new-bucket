@@ -2,6 +2,35 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 
+//material ui components
+import Button from '@material-ui/core/Button';
+import Container from '@material-ui/core/Container';
+import { Grid, Box, TextField, Typography } from '@material-ui/core';
+import { withStyles, createStyles } from '@material-ui/core/styles';
+import Link from '@material-ui/core/Link';
+
+//material ui styles
+const customStyles = (theme) =>
+  createStyles({
+    paper: {
+      marginTop: theme.spacing(12),
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+    },
+    avatar: {
+      margin: theme.spacing(1),
+      backgroundColor: theme.palette.secondary.main,
+    },
+    form: {
+      width: '100%', // Fix IE 11 issue.
+      marginTop: theme.spacing(1),
+    },
+    submit: {
+      margin: theme.spacing(3, 0, 2),
+    },
+  });
+
 class Login extends Component {
   state = {
     username: '',
@@ -31,60 +60,73 @@ class Login extends Component {
   };
 
   render() {
+    const { classes } = this.props;
+
     return (
-      <div>
-        {this.props.store.errors.loginMessage && (
-          <h2 className='alert' role='alert'>
-            {this.props.store.errors.loginMessage}
-          </h2>
-        )}
-        <form className='formPanel' onSubmit={this.login}>
-          <h1>Login</h1>
-          <div>
-            <label htmlFor='username'>
-              Username:
-              <input
-                type='text'
-                name='username'
-                value={this.state.username}
-                onChange={this.handleInputChangeFor('username')}
-              />
-            </label>
-          </div>
-          <div>
-            <label htmlFor='password'>
-              Password:
-              <input
-                type='password'
-                name='password'
-                value={this.state.password}
-                onChange={this.handleInputChangeFor('password')}
-              />
-            </label>
-          </div>
-          <div>
-            <input
-              className='log-in'
-              type='submit'
-              name='submit'
-              value='Log In'
+      <Container component='main' maxWidth='xs'>
+        <div className={classes.paper}>
+          <Typography variant='h5' component='h1'>
+            Login
+          </Typography>
+          <form className={classes.form} noValidate>
+            {this.props.store.errors.loginMessage && (
+              <Typography className='alert' role='alert'>
+                {this.props.store.errors.loginMessage}
+              </Typography>
+            )}
+            <TextField
+              variant='outlined'
+              margin='normal'
+              required
+              fullWidth
+              id='username'
+              label='Username'
+              name='username'
+              autoComplete='username'
+              autoFocus
+              value={this.state.username}
+              onChange={this.handleInputChangeFor('username')}
             />
-          </div>
-        </form>
-        <center>
-          <button
-            type='button'
-            className='link-button'
-            onClick={() => {
-              this.props.dispatch({ type: 'SET_TO_REGISTER_MODE' });
-            }}
-          >
-            Register
-          </button>
-        </center>
-      </div>
+
+            <TextField
+              variant='outlined'
+              margin='normal'
+              required
+              fullWidth
+              name='password'
+              label='Password'
+              type='password'
+              id='password'
+              autoComplete='current-password'
+              value={this.state.password}
+              onChange={this.handleInputChangeFor('password')}
+            />
+
+            <Button
+              variant='outlined'
+              onClick={this.login}
+              className={classes.submit}
+              color='primary'
+              fullWidth
+            >
+              Login
+            </Button>
+            <Grid item>
+              <Link
+                href='#admin'
+                variant='body2'
+                onClick={() =>
+                  this.props.dispatch({ type: 'SET_TO_REGISTER_MODE' })
+                }
+              >
+                {"Don't have an account? Register"}
+              </Link>
+            </Grid>
+          </form>
+        </div>
+      </Container>
     );
   }
 }
 
-export default connect(mapStoreToProps)(Login);
+export default withStyles(customStyles)(connect(mapStoreToProps)(Login));

@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 import { Grid, Typography, Container } from '@material-ui/core';
-import Button from '@material-ui/core/Button';
-import { withStyles, createStyles, fade } from '@material-ui/core/styles';
-import logo from '../../bucket.ico';
+import { withStyles, createStyles } from '@material-ui/core/styles';
 import Box from '@material-ui/core/Box';
 import heroImage from '../../travel-hero.jpg';
 import Card from '../../bucket/Card/Card';
@@ -86,6 +85,7 @@ class LandingPage extends Component {
         </Box>
         <Container className={classes.container}></Container>
         <Grid container spacing={3}>
+          {/* <Link to={'/about'}> */}
           <Grid item xs={12} sm={6} md={4} className={classes.card}>
             <Card
               title={'About'}
@@ -93,8 +93,12 @@ class LandingPage extends Component {
               text={'Learn more about Bucket'}
               button={'Learn more'}
               className={classes.card}
+              href={'#about'}
+              // onClick={() => this.props.history.push('/about')}
             ></Card>
           </Grid>
+          {/* </Link> */}
+
           <Grid item xs={12} sm={6} md={4} className={classes.card}>
             <Card
               title={'Login'}
@@ -102,7 +106,7 @@ class LandingPage extends Component {
               text={'If you have an account, log in here!'}
               button={'Log in Here'}
               className={classes.card}
-              // onClick={this.props.history.push('/login')}
+              href={'#login'}
             ></Card>
           </Grid>
           <Grid item xs={12} sm={6} md={4} className={classes.card}>
@@ -112,65 +116,15 @@ class LandingPage extends Component {
               text={'Register here to start building your Bucket List.'}
               button={'Register Here'}
               className={classes.card}
+              href={'#admin'}
             ></Card>
           </Grid>
         </Grid>
-        {/* <Container maxWidth='lg' className={classes.container}>
-          <Typography
-            variant='h4'
-            className={classes.aboutTitle}
-            color='primary'
-          >
-            About
-          </Typography>
-        </Container> */}
-        {/* <Paper color='inherit'>
-          <Container className={classes.imageContainer} />
-          <Container>
-            {/* <Typography
-              className={classes.heading}
-              variant='h5'
-              color='primary'
-            >
-              {this.state.heading}
-            </Typography> */}
-        {/* <Container className={classes.heading}>
-              <Typography variant='h7'>
-                Welcome to Bucket! Bucket is an application that will help you
-                to develop, store, and explore the Bucket List of experiences
-                that you want to have within your lifetime. If you are already a
-                user, login with your username and password to access your
-                Bucket List. If you are not yet a Bucket user, click Register to
-                create an account with us.
-              </Typography>
-            </Container> */}
-        {/* <Typography className={classes.heading} variant='h7'>
-            Welcome to Bucket! Bucket is an application that will help you to
-            develop, store, and explore the Bucket List of experiences that you
-            want to have within your lifetime. If you are already a user, login
-            with your username and password to access your Bucket List. If you
-            are not yet a Bucket user, click Register to create an account with
-            us.
-          </Typography> */}
-        {/* <Container>
-              <Typography className={classes.heading} variant='h6'>
-                Already a Member?
-              </Typography>
-            </Container>
-
-            <Button
-              className={classes.button}
-              variant='contained'
-              color='secondary'
-              onClick={this.onLogin}
-            >
-              Login
-            </Button>
-          </Container>
-        </Paper> */}
       </div>
     );
   }
 }
 
-export default withStyles(customStyles)(connect(mapStoreToProps)(LandingPage));
+export default withRouter(
+  withStyles(customStyles)(connect(mapStoreToProps)(LandingPage))
+);
