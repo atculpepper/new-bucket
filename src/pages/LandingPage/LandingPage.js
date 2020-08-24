@@ -3,13 +3,10 @@ import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 import { Grid, Typography, Container } from '@material-ui/core';
-import Button from '@material-ui/core/Button';
-import { withStyles, createStyles, fade } from '@material-ui/core/styles';
-import logo from '../../bucket.ico';
+import { withStyles, createStyles } from '@material-ui/core/styles';
 import Box from '@material-ui/core/Box';
 import heroImage from '../../travel-hero.jpg';
 import Card from '../../bucket/Card/Card';
-import { Link } from 'react-router-dom';
 
 import LoginImage from '../../login.png';
 import RegisterImage from '../../register.png';
