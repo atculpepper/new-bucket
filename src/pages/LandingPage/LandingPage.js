@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 import { Grid, Typography, Container } from '@material-ui/core';
@@ -96,6 +97,7 @@ class LandingPage extends Component {
               button={'Learn more'}
               className={classes.card}
               href={'#about'}
+              // onClick={() => this.props.history.push('/about')}
             ></Card>
           </Grid>
           {/* </Link> */}
@@ -107,7 +109,7 @@ class LandingPage extends Component {
               text={'If you have an account, log in here!'}
               button={'Log in Here'}
               className={classes.card}
-              // onClick={this.props.history.push('/login')}
+              href={'#login'}
             ></Card>
           </Grid>
           <Grid item xs={12} sm={6} md={4} className={classes.card}>
@@ -117,6 +119,7 @@ class LandingPage extends Component {
               text={'Register here to start building your Bucket List.'}
               button={'Register Here'}
               className={classes.card}
+              href={'#admin'}
             ></Card>
           </Grid>
         </Grid>
@@ -125,4 +128,6 @@ class LandingPage extends Component {
   }
 }
 
-export default withStyles(customStyles)(connect(mapStoreToProps)(LandingPage));
+export default withRouter(
+  withStyles(customStyles)(connect(mapStoreToProps)(LandingPage))
+);
