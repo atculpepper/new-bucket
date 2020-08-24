@@ -63,26 +63,17 @@ class Login extends Component {
     const { classes } = this.props;
 
     return (
-      <Container
-        component='main'
-        maxWidth='xs'
-        // style={{ marginTop: '10vh', marginLeft: '3vw' }}
-      >
+      <Container component='main' maxWidth='xs'>
         <div className={classes.paper}>
           <Typography variant='h5' component='h1'>
             Login
           </Typography>
           <form className={classes.form} noValidate>
-            {/* <Grid
-            container
-            spacing={2}
-          > */}
             {this.props.store.errors.loginMessage && (
               <Typography className='alert' role='alert'>
                 {this.props.store.errors.loginMessage}
               </Typography>
             )}
-            {/* <Grid item xs={12} md={6}> */}
             <TextField
               variant='outlined'
               margin='normal'
@@ -96,8 +87,7 @@ class Login extends Component {
               value={this.state.username}
               onChange={this.handleInputChangeFor('username')}
             />
-            {/* </Grid> */}
-            {/* <Grid item xs={12} md={6}> */}
+
             <TextField
               variant='outlined'
               margin='normal'
@@ -111,30 +101,16 @@ class Login extends Component {
               value={this.state.password}
               onChange={this.handleInputChangeFor('password')}
             />
-            {/* </Grid> */}
 
             <Button
               variant='outlined'
               onClick={this.login}
-              // style={{ margin: '1vh' }}
               className={classes.submit}
               color='primary'
               fullWidth
             >
               Login
             </Button>
-
-            {/* <Button
-              variant='outlined'
-              // className='link-button'
-              onClick={() => {
-                this.props.dispatch({ type: 'SET_TO_REGISTER_MODE' });
-              }}
-              // style={{ margin: '1vh' }}
-              className={classes.submit}
-            >
-              Register
-            </Button> */}
             <Grid item>
               <Link
                 href='#admin'
@@ -146,7 +122,6 @@ class Login extends Component {
                 {"Don't have an account? Register"}
               </Link>
             </Grid>
-            {/* </Grid> */}
           </form>
         </div>
       </Container>
